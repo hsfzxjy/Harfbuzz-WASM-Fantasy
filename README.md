@@ -6,6 +6,8 @@
 | :------------------------------------: | :--------------------------: |
 | [![][cover-bad-apple]](link-bad-apple) | [![][cover-maze]][link-maze] |
 
+**MORE CRAZY STUFFS TO COME SOON!**
+
 [link-bad-apple]: https://github.com/hsfzxjy/Bad-Apple-Font
 [cover-bad-apple]: https://github.com/hsfzxjy/Harfbuzz-WASM-Fantasy/assets/4702188/04241bd6-1525-4b9a-bc50-db6bfe93ec5a
 [link-maze]: #maze-game
@@ -55,6 +57,8 @@ where `5 <= size <= 20` defines the size of maze, and `0 <= seed <= 99` is a see
 All mazes start from the bottom-left corner and target the top-right corner. The player can use <kbd>W</kbd><kbd>S</kbd><kbd>A</kbd><kbd>D</kbd> for movement.
 
 https://user-images.githubusercontent.com/4702188/265505370-6d528e98-63ec-4b56-9f33-aabd654905e7.mp4
+
+### MORE TO COME!
 
 ## License
 
