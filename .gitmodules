@@ -1,0 +1,6 @@
+[submodule "harfbuzz"]
+	path = harfbuzz
+	url = https://github.com/harfbuzz/harfbuzz
+[submodule "wasm-micro-runtime"]
+	path = wasm-micro-runtime
+	url = https://github.com/bytecodealliance/wasm-micro-runtime.git

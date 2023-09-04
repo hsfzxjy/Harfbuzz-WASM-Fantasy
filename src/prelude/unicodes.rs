@@ -1,0 +1,4 @@
+pub const UNICODE_PIXEL: u32 = 0xF0001;
+pub const UNICODE_HLINE: u32 = 0xF0002;
+pub const UNICODE_VLINE: u32 = 0xF0003;
+pub const UNICODE_SMALLPIXEL: u32 = 0xF0004;

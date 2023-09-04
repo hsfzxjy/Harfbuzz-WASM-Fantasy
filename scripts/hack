@@ -1,0 +1,13 @@
+#!/bin/bash
+
+HERE=$(cd $(dirname "$0") && pwd)/../
+
+make harfbuzz
+
+rm -f $HOME/.local/share/fonts/HB_WASM_Fantasy.ttf
+ln -s $PWD/bin/HB_WASM_Fantasy.ttf $HOME/.local/share/fonts/
+gsettings set org.gnome.gedit.preferences.editor editor-font 'HB_WASM_Fantasy 240'
+
+export LD_PRELOAD="$HERE/harfbuzz/build/src/libharfbuzz.so.0 $HERE/wasm-micro-runtime/build/libiwasm.so"
+
+gedit
