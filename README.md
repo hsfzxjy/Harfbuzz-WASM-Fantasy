@@ -13,7 +13,19 @@
 [link-maze]: #maze-game
 [cover-maze]: https://github.com/hsfzxjy/Harfbuzz-WASM-Fantasy/assets/4702188/97dbd2c4-ec9b-4249-b4ce-a529709f1ade
 
-## Prerequisites
+## Run with Docker
+
+You can easily experiment with this project on the fly by utilizing the pre-built Docker image. To start off simply execute:
+
+```bash
+bin/run-docker
+```
+
+## Build & Run Locally
+
+If you prefer to build it locally on your own, please follow the steps outlined below.
+
+### Prerequisites
 
 First, clone this project to your local machine and update all sub-modules:
 
@@ -25,7 +37,7 @@ git submodule update --init --recursive
 Before we start, make sure the following commands are globally available:
 
 ```plaintext
-python3 cmake g++ wget tar ffmpeg cargo rustup
+python3 cmake g++ wget tar ffmpeg cargo rustup wasm-pack
 ```
 
 Besides, `fontmake` would be used for font generation:
@@ -34,9 +46,9 @@ Besides, `fontmake` would be used for font generation:
 python3 -m pip install fontmake
 ```
 
-## Building & Hacking
+### Building & Starting
 
-To build this project you simply need to run `make`. Afterwards, execute `scripts/hack` to start a hijacked gedit.
+To build this project you simply need to run `make && make harfbuzz`. Afterwards, execute `bin/run-local` to start a hijacked gedit.
 
 ---
 
