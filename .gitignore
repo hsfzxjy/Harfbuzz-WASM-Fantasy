@@ -17,6 +17,7 @@ Cargo.lock
 *.glyphs
 /bin/*
 !/bin/otfsurgeon
+!/bin/*.sha256
 /pkg/
 
 /videos/
