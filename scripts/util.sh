@@ -1,7 +1,6 @@
 #!/bin/bash
 
-HERE=$(cd $(dirname $0) && pwd)
-cd "$HERE/.."
+HERE=$(cd $(dirname $0) && pwd)/..
 
 function checksum() {
     sha256sum -c "$1"
@@ -40,3 +39,5 @@ function available() {
     TRASH=$(builtin command -v "$1")
     builtin return $?
 }
+
+IMAGE_NAME=hsfzxjy/harfbuzz-wasm-fantasy
