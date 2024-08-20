@@ -1,0 +1,5 @@
+#!/bin/bash
+
+builtin source $(cd $(dirname $0) && pwd)/../scripts/util.sh
+
+docker build . -t $IMAGE_NAME --target final --build-arg USE_PROXY=1 --network=host

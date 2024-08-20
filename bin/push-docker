@@ -1,0 +1,4 @@
+#!/bin/bash
+
+builtin source $(cd $(dirname $0) && pwd)/../scripts/util.sh
+docker push $IMAGE_NAME

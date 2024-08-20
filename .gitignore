@@ -18,6 +18,7 @@ Cargo.lock
 /bin/*
 !/bin/otfsurgeon
 !/bin/*.sha256
+!/bin/*docker
 /pkg/
 
 /videos/
