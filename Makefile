@@ -23,6 +23,20 @@ $(Glyphs_Manipulated): $(Glyphs_Origin) scripts/make-font.py
 $(WASM): $(wildcard src/**/*) $(wildcard src/*)
 	wasm-pack build --target web
 
+.PHONY: all
+all: font harfbuzz
+
+.PHONY: clean
+clean:
+	rm -rfv wasm-micro-runtime/build harfbuzz/build wasm-micro-runtime/wamr-compiler/build
+
+.PHONY: clean_llvm
+clean_llvm:
+	rm -rfv wasm-micro-runtime/core/deps/llvm
+
+.PHONY: font
+font: $(TTF_Final)
+
 .PHONY: harfbuzz
 harfbuzz:
 	scripts/build_harfbuzz.sh

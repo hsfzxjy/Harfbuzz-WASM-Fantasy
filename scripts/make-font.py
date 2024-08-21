@@ -74,6 +74,11 @@ new_glyphs = [
         0xF0004,
         [(15, 15, "ls"), (15, 35, "ls"), (35, 35, "ls"), (35, 15, "ls")],
     ),
+    Glyph(
+        "Pixel20",
+        0xF0005,
+        [(0, 0, "ls"), (0, 20, "ls"), (20, 20, "ls"), (20, 0, "ls")],
+    ),    
 ]
 
 glyphs_src = Path("bin") / "glyphs_src"

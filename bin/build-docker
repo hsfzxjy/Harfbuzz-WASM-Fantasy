@@ -2,4 +2,17 @@
 
 builtin source $(cd $(dirname $0) && pwd)/../scripts/util.sh
 
-docker build . -t $IMAGE_NAME --target final --build-arg USE_PROXY=1 --network=host
+DOCKER_ARGS=("--network=host" "--progress=tty")
+
+docker build . -t "$IMAGE_NAME-dev" --target dev --build-arg USE_PROXY=1 "${DOCKER_ARGS[@]}" \
+    --build-context iwasm=wasm-micro-runtime/build-scripts || exit 1
+
+docker run --rm -it --network=host -u $(id -u):$(id -g) -e HOME=/tmp -e USE_PROXY=1 \
+    -v $PWD:/repo "$IMAGE_NAME-dev" \
+    bash -c "cd /repo; pcng make all"
+
+docker build . -t "$IMAGE_NAME" --target final --build-arg USE_PROXY=1 "${DOCKER_ARGS[@]}" \
+    --build-context iwasm=wasm-micro-runtime/build \
+    --build-context hb=harfbuzz/build/ \
+    --build-context font=bin/ \
+    --build-context wamr=wasm-micro-runtime/wamr-compiler/build
